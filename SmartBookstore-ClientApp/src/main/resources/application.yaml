@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: Smart Bookstore
+
+server:
+  port: 9099
+  base:
+    url: http://localhost:9090

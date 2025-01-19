@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/main}">
+    <head>
+        <title>My Profile</title>
+        <link rel="stylesheet" th:href="@{/css/profile.css}" />
+    </head>
+    <body>
+        <section class="container mt-5" layout:fragment="content">
+            <div class="content-box text-center">
+                <h3 class="text-title">My Profile</h3>
+                
+                <div class="user-info">
+                    <div class="user-attribute">
+                        <div class="text-attribute">
+                            <span class="attribute">User ID</span>
+                        </div>
+                        <div class="text-attribute">
+                            <span class="attribute">Full Name</span>
+                        </div>
+                        <div class="text-attribute">
+                            <span class="attribute">Email</span>
+                        </div>
+                        <div class="text-attribute">
+                            <span class="attribute">Phone</span>
+                        </div>
+                    </div>
+                    <div class="user-value" id="user-val">
+                        <div class="input-box">
+                            <input class="text-box" th:value="${userId}" id="userId" type="text" disabled>
+                        </div>
+                        <div class="input-box">
+                            <input class="text-box" th:value="${userFullname}" id="fullname" type="text" disabled>
+                        </div>
+                        <div class="input-box">
+                            <input class="text-box" th:value="${userEmail}" id="userEmail" type="text" disabled>
+                        </div>
+                        <div class="input-box">
+                            <input class="text-box" th:value="${userPhone}" id="userPhone" type="text" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="div-button">
+                    <!-- <a th:href="@{/cp}" style="text-decoration: none;">
+                        <button class="btn btn-primary" type="button">
+                            Change Password
+                        </button>
+                    </a> -->
+                    <a th:href="@{/profile/edit}" style="text-decoration: none;">
+                        <button class="btn btn-primary" type="button">
+                            Edit 
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+        <div layout:fragment="script">
+            <script src="/js/profile.js"></script>
+        </div>
+    </body>
+</html>

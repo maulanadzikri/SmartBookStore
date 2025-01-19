@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/main}">
+    <head>
+        <title>Edit Profile</title>
+        <link rel="stylesheet" th:href="@{/css/editprofile.css}" />
+    </head>
+    <body>
+        <section class="container mt-5" layout:fragment="content">
+            <div class="content-box text-center">
+                <h3 class="text-title">Edit Profile</h3>
+                
+                <div class="user-info">
+                    <div class="user-attribute">
+                        <div class="text-attribute">
+                            <span class="attribute">User ID</span>
+                        </div>
+                        <div class="text-attribute">
+                            <span class="attribute">Full Name</span>
+                        </div>
+                        <div class="text-attribute">
+                            <span class="attribute">Email</span>
+                        </div>
+                        <div class="text-attribute">
+                            <span class="attribute">Phone</span>
+                        </div>
+                    </div>
+                    <div class="user-value" id="user-val">
+                        <form>
+                            <div class="hide-this">
+                                <input class="text-box" id="user-id" th:value="${userId}" type="text" required>
+                            </div>
+                            <div class="input-box">
+                                <input class="text-box" th:value="${userId}" id="user-id-show" type="text" disabled>
+                            </div>
+                            <div class="input-box">
+                                <input class="text-box" th:value="${userFullname}" id="fullname" type="text" required>
+                            </div>
+                            <div class="input-box">
+                                <input class="text-box" th:value="${userEmail}" id="user-email" type="text" required>
+                            </div>
+                            <div class="input-box">
+                                <input class="text-box" th:value="${userPhone}" id="user-phone" type="text" required>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="div-button">
+                    <a th:href="@{/profile}" style="text-decoration: none;">
+                        <button id="btn-update" class="btn btn-success" type="button" th:onclick="updateEmployee()">
+                            Save
+                        </button>
+                    </a>    
+                    <a th:href="@{/profile}" style="text-decoration: none;">
+                        <button id="btn-cancel"   class="btn btn-danger" type="button">
+                            Cancel
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+        <div layout:fragment="script">
+            <script src="/js/profile.js"></script>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Register</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css" rel="stylesheet"/>
+    <style>
+        .card {
+            border-radius: 1rem;
+        }
+        .form-outline {
+            position: relative;
+        }
+        .form-outline input.form-control {
+            border: 2px solid #ced4da;
+            border-radius: .25rem; 
+        }
+        .form-outline input.form-control:focus {
+            border-color: #007bff; 
+        }
+        .form-outline label {
+            position: absolute;
+            top: .5rem;
+            left: 1rem;
+            transition: all .2s ease-out;
+            color: #6c757d; 
+        }
+        .form-outline input.form-control:focus ~ label, .form-outline input.form-control:not(:placeholder-shown) ~ label {
+            top: -1rem;
+            left: 0;
+            font-size: .75rem;
+            color: #007bff; 
+            background-color: #fff; 
+            padding: 0 .25rem; 
+        }
+        .cursor-pointer{
+            cursor: pointer;
+        }
+
+        .sbs-container img{
+            height: 300px;
+            width: auto;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            -webkit-filter: drop-shadow(2px 2px 2px #272727ab);
+            filter: drop-shadow(2px 2px 2px #272727ab);
+        }
+
+        .logreg-title {
+            position: absolute;
+            left: 30px;
+            top: 70px;
+            font-size: 80px;
+            color: #fff;
+            text-shadow: 2px 2px #000;
+        }
+
+        .logreg-quotes {
+            position: absolute;
+            left: 30px;
+            top: 180px;
+            font-size: 40px;
+            font-style: italic;
+            color: #fff;
+            text-shadow: 2px 2px #000;
+        }
+    </style>
+</head>
+<body class="d-flex justify-content-end align-items-center" style="height: 100vh; background-color: #35b367; margin-right: 100px;">
+    <div class="sbs-container">
+        <h1 class="logreg-title">Smart Bookstore</h1>
+        <h5 class="logreg-quotes">Today a reader,<br>tomorrow a leader.</h5>
+        <img th:src="@{/img/5808bg.png}" alt="Books">
+    </div>
+    <div class="card" style="border-radius: 1rem; width: 90%; max-width: 500px;">
+        <div class="card-body p-4 p-lg-5 text-black">
+                                        <!-- <form th:action="@{/register}" th:method="POST" th:object="${registerRequest}"> -->
+                                        <form autocomplete="off">
+                                            <!-- <div class="d-flex align-items-center mb-3 pb-1">
+                                                <span class="h1 fw-bold mb-0">Sign Up</span>
+                                            </div> -->
+                                            <input type="text" name="username" style="display:none;">
+                                            <input type="password" name="password" style="display:none;">
+                                            <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">Create your account</h5>
+                                            <div data-mdb-input-init class="form-outline mb-4">
+                                                <input type="text" autocomplete="off" class="form-control form-control-lg"/>
+                                                <label class="form-label">Username</label>
+                                            </div>
+                                            <div data-mdb-input-init class="form-outline mb-4">
+                                                <input type="text" autocomplete="off" class="form-control form-control-lg"/>
+                                                <label class="form-label">Fullname</label>
+                                            </div>
+                                            <div data-mdb-input-init class="form-outline mb-4">
+                                                <input type="email" autocomplete="off" class="form-control form-control-lg"/>
+                                                <label class="form-label">Email</label>
+                                            </div>
+                                            <div data-mdb-input-init class="form-outline mb-4">
+                                                <input type="text" name="no-filed-name"  autocomplete="off" class="form-control form-control-lg"/>
+                                                <label class="form-label">Phone</label>
+                                            </div>
+                                            <div data-mdb-input-init class="form-outline mb-4">
+                                                <input type="password"  name="no-filed-password" autocomplete="off"
+                                                    class="form-control form-control-lg"/>
+                                                <label class="form-label">Password</label>
+                                            </div>
+                                            <div class="pt-1 mb-4">
+                                                <button id="btn-register" type="submit" class="btn btn-dark btn-lg btn-block">Sign Up</button>
+                                            </div>
+                                            <p class="mb-5 pb-lg-2" style="color: #393f81">Already have an account? <a class="cursor-pointer" th:href="@{/login}">Sign In</a></p>
+                                            <a href="#!" class="small text-muted">Terms of use.</a>
+                                            <a href="#!" class="small text-muted">Privacy policy</a>
+                                        </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"></script>
+</body>
+</html>

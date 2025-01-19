@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/main2}">
+    <head>
+        <title>Book Client Service</title>
+    </head>
+    <body>
+        <section class="container mt-5 text-black card2 shadow" layout:fragment="content">
+            <div class="row">
+                <div class="col">
+                    <nav aria-label="breadcrumb" class="bg-body-tertiary rounded-3 p-3 mb-4">
+                        <ol class="breadcrumb mb-0">
+                            <li class="breadcrumb-item"><a th:href="@{/dashboard}">Dashboard</a></li>
+                            <!-- <li class="breadcrumb-item"><a href="#">User</a></li> -->
+                            <li class="breadcrumb-item active" aria-current="page">
+                              <a th:href="@{/book}">Books</a></li>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="fw-bold">List of Books</h1>
+                <a href="/book/create" class="btn btn-success">Add Book</a>
+            </div>
+            <table id="table-book" class="table mt-3 table-bordered table-striped table-hover text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th class="col-1">No</th>
+                        <th class="col-3">Name</th>
+                        <th class="col-3">Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            
+            <!-- Modal Detail -->
+            <div class="modal fade" id="detail-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="detail-label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="detail-label">Detail Book</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form>
+                          <div class="modal-body">
+                            <div class="mb-3">
+                              <label class="form-label fw-bold">Title</label>
+                              <input type="text" id="detail-book-title" class="form-control" placeholder="Book Title" disabled>
+                            </div>
+                            <div class="mb-3">
+                              <label class="form-label fw-bold">Image</label><br>
+                              <img id="detail-book-img" style="width: 50px; height: auto;" class="img-fluid" alt="Book Image">
+                            </div>
+                            <div class="mb-3">
+                              <label class="form-label fw-bold">Year</label>
+                              <input type="text" id="detail-book-year" class="form-control" placeholder="Book Year" disabled>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Category</label>
+                                <input type="text" id="detail-book-category" class="form-control" placeholder="Book Category" disabled>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Author</label>
+                                <input type="text" id="detail-book-author" class="form-control" placeholder="Book Author" disabled>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Publisher</label>
+                                <input type="text" id="detail-book-publisher" class="form-control" placeholder="Book Publisher" disabled>
+                            </div>
+                            <div class="mb-3">
+                              <label class="form-label fw-bold">Price</label>
+                              <input type="text" id="detail-book-price" class="form-control" placeholder="Book Price" disabled>
+                            </div>
+                            <div class="mb-3">
+                              <label class="form-label fw-bold">Stock</label>
+                              <input type="text" id="detail-book-stock" class="form-control" placeholder="Book Stock" disabled>
+                            </div>  
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+        <div layout:fragment="script">
+            <script src="/js/book.js"></script>
+        </div>
+    </body>
+</html>

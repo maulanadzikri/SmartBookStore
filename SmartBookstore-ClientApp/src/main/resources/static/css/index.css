@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  /* color: #000; */
+}
+
+
+.container-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(20% - 20px), 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card2 {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.card:hover {
+  transition: 0.5s;
+  background-color: #22c165;
+}
+
+.card:hover .card-info {
+  color: #ffeb3b;
+}
+
+.container-card::after {
+  content: '';
+  flex-grow: 1;
+}
+
+.card-img-cover {
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: -10px;
+  /* cursor: pointer; */
+}
+
+.card-title {
+  margin: 0px -15px;
+  font-size: 16px;
+  text-align: center;
+  height: 60px;
+  /* cursor: pointer; */
+}
+
+.card-info {
+  height: 20px;
+  width: 100%;
+  text-align: center;
+  margin: 5px auto;
+  font-weight: bold;
+  color: #17921d;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.card-price {
+  font-size: 14px;
+}
+
+.card-button {
+  /* background-color: #1f64bd; */
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.card-button:hover {
+  transition: 0.5s;
+  /* background-color: #00f3df; */
+}
+
+.futer {
+  height: 100px;
+  background-color: #eee;
+}
+
+.shadow {
+  box-shadow: 0 .5rem 1rem rgba(#000, .15);
+}

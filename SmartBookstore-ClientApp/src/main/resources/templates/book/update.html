@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/main2}">
+    <head>
+        <title>Book Client Service</title>
+        <style>
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
+        </style>
+    </head>
+        <body>
+            <section class="container mt-5 text-black card2 shadow" layout:fragment="content">
+                <div class="row">
+                    <div class="col">
+                        <nav aria-label="breadcrumb" class="bg-body-tertiary rounded-3 p-3 mb-4">
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item"><a th:href="@{/dashboard}" style="color: blue;">Dashboard</a></li>
+                                <!-- <li class="breadcrumb-item"><a href="#">User</a></li> -->
+                                <li class="breadcrumb-item" aria-current="page">
+                                  <a th:href="@{/book}" style="color: blue;">Books</a></li>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                  <a th:href="@{/book/update}" style="color: blue;">Update Book</a></li>
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1 class="fw-bold">Update Books</h1>
+                </div>
+
+                <form th:action="@{/book/{id}(id=${book.id})}" th:method="PUT" th:object="${book}">
+                    <input type="text" id="update-book-id" th:field="*{id}" class="form-control" style="display: none;" disabled>
+                    <div class="mb-3">
+                        <img th:src="@{${book.img}}" id="api-book-img" style="width: auto; height: 300px;" class="img-fluid" alt="Book Image">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Title</label>
+                        <input type="text" id="update-book-title" th:field="*{title}" class="form-control" placeholder="Book Title" required>
+                    </div>
+                    <div class="mb-3" id="url-input-container">
+                        <label class="form-label">Image URL</label>
+                        <input type="text" id="update-book-img-url" th:field="*{img}" class="form-control" placeholder="Book Image URL">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Year</label>
+                        <input type="text" id="update-book-year" th:field="*{year}" class="form-control" placeholder="Book Year" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Category</label>
+                        <select id="update-book-category" th:field="*{categoryId}" class="form-select" required>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Author</label>
+                        <select id="update-book-author" th:field="*{authorId}" class="form-select" required>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Publisher</label>
+                        <select id="update-book-publisher" th:field="*{publisherId}" class="form-select" required>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Price</label>
+                        <input type="text" id="update-book-price" th:field="*{price}" class="form-control" placeholder="Book Price" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Stock</label>
+                        <input type="text" id="update-book-stock" th:field="*{stock}" class="form-control" placeholder="Book Stock" required>
+                    </div>
+                    <div class="mb-3">
+                        <button id="update-book-button" type="submit" class="btn btn-success">Update</button>
+                        <button type="reset" class="btn btn-danger"><a class="cancel-link" th:href="@{/book}">Cancel</a></button>
+                    </div>
+                </form>
+            
+
+            </section>
+            <div layout:fragment="script">
+                <script src="/js/bookUpdate.js"></script>
+            </div>
+        </body>
+    </html>

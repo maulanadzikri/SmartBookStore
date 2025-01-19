@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/main}">
+<head>
+    <title>Edit Profile</title>
+</head>
+<body>
+<section style="background-color: #eee;" layout:fragment="content">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col">
+                <nav aria-label="breadcrumb" class="bg-body-tertiary rounded-3 p-3 mb-4">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
+                        <li class="breadcrumb-item"><a th:href="@{/profile}">My Profile</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <!-- <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                             class="rounded-circle img-fluid" style="width: 150px;">
+                        <h5 class="my-3" th:text="${username}"></h5>
+                        <p class="text-muted mb-1">Full Stack Developer</p>
+                        <p class="text-muted mb-4">Jakarta Indonesia</p>
+                        <div class="d-flex justify-content-center mb-2">
+                            <button type="button" class="btn btn-primary">Follow</button>
+                            <button type="button" class="btn btn-outline-primary ms-1">Message</button>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="card mb-4 mb-lg-0">
+                    <div class="card-body p-0">
+                        <ul class="list-group list-group-flush rounded-3">
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                <i class="fas fa-globe fa-lg text-warning"></i>
+                                <p class="mb-0">{{profile.website}}</p>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                <i class="fab fa-github fa-lg text-body"></i>
+                                <p class="mb-0">{{profile.github}}</p>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
+                                <p class="mb-0">{{profile.twitter}}</p>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
+                                <p class="mb-0">{{profile.instagram}}</p>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
+                                <p class="mb-0">{{profile.facebook}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div> -->
+            </div>
+            <form>
+                <div class="col-lg-8">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <input class="text-box" id="user-id" th:value="${userId}" type="text" hidden>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Full Name</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input class="text-box" th:value="${userFullname}" id="fullname" type="text" required>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Email</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input class="text-box" th:value="${userEmail}" id="user-email" type="text" required>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Phone</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input class="text-box" th:value="${userPhone}" id="user-phone" type="text" required>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="d-flex justify-content-center mb-2">
+                                    <button id="btn-update" class="btn btn-success" type="button" th:onclick="updateProfile()">
+                                        Save
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer class="futer" style="background-color: #eee;"></footer>
+</section>
+    <div layout:fragment="script">
+        <script src="/js/profile.js"></script>
+    </div>
+</body>
+</html>

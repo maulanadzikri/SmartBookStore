@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{layout/main}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Bookstore</title>
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/imageslider.css" />
+</head>
+<body>
+    <section class="container" layout:fragment="content">
+
+        <div class="container-slide">
+            <div class="slideshow-container shadow">
+                <img src="/img/banner1.jpg" class="slide">
+                <img src="/img/banner2.jpg" class="slide">
+            </div>
+        </div>
+
+        <!-- Book -->
+        <div class="container-card"></div>
+    </section>
+
+    <div layout:fragment="script">
+        <script src="/js/script.js"></script>
+        <script src="/js/imageslider.js"></script>
+    </div>
+</body>
+</html>

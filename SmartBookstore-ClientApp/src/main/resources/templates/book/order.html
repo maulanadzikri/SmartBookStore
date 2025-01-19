@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/main}">
+    <head>
+        <title>Book Client Service</title>
+        <link rel="stylesheet" href="/css/order.css">
+    </head>
+        <body>
+            <section class="container mt-5 text-white" layout:fragment="content">
+                <!-- <div class="d-flex justify-content-between align-items-center">
+                    <h1 class="fw-bold" th:field="title"></h1>
+                </div> -->
+                <div class="row ">
+                    <div class="col">
+                        <nav aria-label="breadcrumb" class="bg-body-tertiary rounded-3 p-3 mb-4 shadow">
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
+                                <!-- <li class="breadcrumb-item"><a href="#">User</a></li> -->
+                                <li class="breadcrumb-item active" aria-current="page">
+                                  <a href="#">Order Book</a></li>
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                  </div>
+                <div class="card shadow">
+                    
+                    <div class="book-container">
+                        <!-- <input type="text" id="book-id" th:field="*{id}" class="form-control" style="display: none;" disabled> --> 
+                        <!-- <h1>User ID : <span th:text="${user}"></span></h1> -->
+                        <span id="book-id" th:text="@{${book.id}}" style="display: none;"></span>
+                        <div class="book-cover">
+                            <img th:src="@{${book.img}}" id="api-book-im" style="width: auto; height: 300px;" class="img-fluid" alt="Book Image">
+                        </div>
+                        <div class="book-detail">
+                            <h2 id="book-title" class="fw-bold" th:text="@{${book.title}}"></h2>
+                            <div class="book-sub-detail">
+                                <span id="book-author" class="fw-bold"></span><br><br>
+                                <span>Year : </span><span id="book-year"></span><br>
+                                <span>Category : </span><span id="book-category"></span><br>
+                                <span>Publisher : </span><span id="book-publisher"></span>
+                            </div>
+                            <div class="book-buy-box">
+                                <h5 class="book-price-rp">Rp. <span id="book-price" class="book-price-rp" th:text="@{${book.price}}"></span></h5>
+                                <br>
+                                <!-- <button class="btn-buy" onclick="findById()">Buy</button> -->
+                            </div>
+                            <div class="payment-form">
+                                <form th:action="@{/book/{id}(id=${book.id})}" th:method="POST" th:object="${book}">
+                                    <input type="text" id="userId" class="text-box" th:value="${userId}" hidden>
+
+                                    <p>Qty:</p>
+                                    <button class="qtyminus" aria-hidden="true">&minus;</button>
+                                        <input type="number" name="qty" id="qty" min="1" max="10" step="1" value="1">
+                                    <button class="qtyplus" aria-hidden="true">&plus;</button>
+                                    <p>Total:</p><b><span id="order-total" class="total-order"></span></b>
+                                    <br><br>
+                                    <div class="card shadow p-3">
+                                        <h3>Payment</h3>
+                                        <!-- <p>Cardholder Name</p> -->
+                                        <input id="card-holder-name" type="text" class="inputbox" name="name" placeholder="Cardholder Name" required />
+                                        <!-- <p>Card Number</p> -->
+                                        <input id="card-number" type="text" class="inputbox" name="card-number" placeholder="Card Number" required />
+
+                                        <!-- <p>Card Type</p> -->
+                                        <select class="inputbox" name="card-type" id="card-type" required>
+                                            <option value="">--Select a Card Type--</option>
+                                            <option value="Visa">Visa</option>
+                                            <option value="MasterCard">MasterCard</option>
+                                            <option value="PayPal">PayPal</option>
+                                            <option value="BankTransfer">BankTransfer</option>
+                                        </select>
+                                        <div class="expcvv">
+                                            <!-- <p class="expcvv-text">MM</p> -->
+                                            <input type="text" class="inputbox mm" name="exp-date" id="exp-mm" placeholder="MM" required />
+
+                                            <!-- <p class="expcvv-text">YY</p> -->
+                                            <input type="text" class="inputbox yy" name="exp-date2" id="exp-yy" placeholder="YY" required />
+
+                                            <!-- <p class="expcvv-text2">CVV</p> -->
+                                            <input type="password" class="inputbox" name="cvv" id="cvv" placeholder="CVV" required />
+                                        </div>
+                                        <button id="order-buy" type="submit" class="button">Buy</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-btm"></div>
+                </div>
+
+                <footer class="futer" style="background-color: #eee;"></footer>
+            </section>
+            <div layout:fragment="script">
+                <!-- <script src="/js/bookUpdate.js"></script> -->
+                <script src="/js/order.js"></script>
+            </div>
+        </body>
+    </html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <title>Navbar</title>
+</head>
+<body>
+    <div th:fragment="navbar">
+         <!-- Header section start -->
+    <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="form-center">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+                <div class="icon-container">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </div>
+    </nav> -->
+
+    <!-- Navbar 2 -->
+    <nav class="navbar navbar-expand-lg bg-success">
+        <div class="container-fluid">
+            <button class="openbtn" onclick="toggleSidebar()">☰</button>
+            <a class="navbar-brand fw-bold" th:href="@{/home}">
+                <img class="d-inline-block align-text-top" th:src="@{/img/bs-icon.png}" alt="icon-logo" width="30" height="30">
+                <span class="text-light">Smart Bookstore</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <div class="form-center">
+                    <form id="search-form" class="d-flex" role="search">
+                        <input id="search-input" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>                    
+                </div>
+                <div class="icon-container">
+                    <!-- <i class="fas fa-heart"></i> -->
+                    <!-- Default dropstart button -->
+                    <div class="btn-group dropstart">
+                        <!-- <button type="button" class="btn btn-success cart-btn">
+                            <div class="icon-cart">
+                                <i class="fas fa-shopping-cart text-light"></i>
+                                <span>0</span>
+                            </div>
+                        </button>
+                        <div class="btn-space-h"></div> -->
+                        <button type="button" class="btn btn-success " data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user text-light"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                        <!-- Dropdown menu links -->
+                        <li><a th:href="@{/profile}" style="text-decoration: none;"><button class="dropdown-item" type="button">My Profile</button></a></li>
+                        <li><a th:href="@{/history}" style="text-decoration: none;"><button class="dropdown-item" type="button">History</button></a></li>
+                        <li><form th:action="@{/logout}" th:method="POST"><button class="dropdown-item text-danger" type="submit">Logout</button></form></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    </div>
+    
+</body>
+</html>

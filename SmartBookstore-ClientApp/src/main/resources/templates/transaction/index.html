@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/main2}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/ts.css}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <section class="container" layout:fragment="content">
+
+    <div class="main-content shadow">
+        <div class="row">
+            <div class="col">
+                <nav aria-label="breadcrumb" class="bg-body-tertiary rounded-3 p-3 mb-4">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a th:href="@{/dashboard}">Dashboard</a></li>
+                        <!-- <li class="breadcrumb-item"><a href="#">User</a></li> -->
+                        <li class="breadcrumb-item active" aria-current="page">
+                          <a th:href="@{/transaction}">Transaction</a></li>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+          </div>
+
+        <div class="transactions">
+            <div class="transactions-header">
+                <h2>Transactions</h2>
+                <!-- <div class="filter-options">
+                    <button>All</button>
+                    <button>Received</button>
+                    <button>Transfer</button>
+                    <button>Payment</button>
+                    <button>Withdraw</button>
+                </div> -->
+                <div class="header">
+                    <div class="balance" style="font-size: 28px; padding-top: 20px;">
+                        <span class="desc-content" id="val-earning"></span>
+                    </div>
+                </div>
+            </div>
+            <table id="table-history" class="table table-bordered table-striped table-hover text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th class="col-1 text-center">ID User</th>
+                        <th class="col-2">Name</th>
+                        <th class="col-2">Date</th>
+                        <th class="col-1">ID Book</th>
+                        <th class="col-2">Book</th>
+                        <th class="col-1">Qty</th>
+                        <th class="col-2">Price</th>
+                        <th class="col-2">Total</th>
+                        <!-- <th class="col-2">Action</th> -->
+                    </tr>
+                </thead>
+            </table>
+            <!-- <table class="transactions-table">
+                <thead>
+                    <tr>
+                        <th>Name/Business</th>
+                        <th>Date</th>
+                        <th>Invoice ID</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="user1.jpg" alt="User"> William Murdoch</td>
+                        <td>21 March 2021</td>
+                        <td>OP01214784</td>
+                        <td>$250 USD</td>
+                        <td class="status receive">Receive</td>
+                        <td><button>Details</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="user2.jpg" alt="User"> Jack Dawson</td>
+                        <td>20 March 2021</td>
+                        <td>OP01214784</td>
+                        <td>-$20 USD</td>
+                        <td class="status transfer">Transfer</td>
+                        <td><button>Details</button></td>
+                    </tr>
+                </tbody>
+            </table> -->
+        </div>
+        <!-- <div class="container-chart">
+            <div class="top-cards">
+                <div class="card">
+                    <h2>TRAFFIC</h2>
+                    <p class="value">350,897</p>
+                    <p class="change" style="color: green;">↑ 3.48% Since last month</p>
+                </div>
+                <div class="card">
+                    <h2>NEW USERS</h2>
+                    <p class="value">2,356</p>
+                    <p class="change" style="color: red;">↓ 3.48% Since last week</p>
+                </div>
+                <div class="card">
+                    <h2>SALES</h2>
+                    <p class="value">924</p>
+                    <p class="change" style="color: red;">↓ 1.10% Since yesterday</p>
+                </div>
+                <div class="card">
+                    <h2>PERFORMANCE</h2>
+                    <p class="value">49.65%</p>
+                    <p class="change" style="color: green;">↑ 12% Since last month</p>
+                </div>
+            </div>
+            <div class="main-content-charts">
+                <div class="chart">
+                    <h2>Sales value</h2>
+                    <canvas id="salesChart"></canvas>
+                </div>
+                <div class="performance">
+                    <h2>Total orders</h2>
+                    <canvas id="ordersChart"></canvas>
+                </div>
+            </div>
+            <div class="table">
+                <h2>Page visits</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>PAGE NAME</th>
+                            <th>VISITORS</th>
+                            <th>UNIQUE USERS</th>
+                            <th>BOUNCE RATE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>/argon/</td>
+                            <td>4,569</td>
+                            <td>340</td>
+                            <td>46.53%</td>
+                        </tr>
+                        <tr>
+                            <td>/argon/index.html</td>
+                            <td>3,985</td>
+                            <td>319</td>
+                            <td>46.53%</td>
+                        </tr>
+                        <tr>
+                            <td>/argon/charts.html</td>
+                            <td>3,513</td>
+                            <td>294</td>
+                            <td>36.49%</td>
+                        </tr>
+                        <tr>
+                            <td>/argon/tables.html</td>
+                            <td>2,050</td>
+                            <td>147</td>
+                            <td>50.87%</td>
+                        </tr>
+                        <tr>
+                            <td>/argon/profile.html</td>
+                            <td>1,795</td>
+                            <td>190</td>
+                            <td>46.53%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="traffic">
+                <h2>Social traffic</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>REFERRAL</th>
+                            <th>VISITORS</th>
+                            <th>CONVERSION RATE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Facebook</td>
+                            <td>1,480</td>
+                            <td>60%</td>
+                        </tr>
+                        <tr>
+                            <td>Facebook</td>
+                            <td>5,480</td>
+                            <td>70%</td>
+                        </tr>
+                        <tr>
+                            <td>Google</td>
+                            <td>4,807</td>
+                            <td>80%</td>
+                        </tr>
+                        <tr>
+                            <td>Instagram</td>
+                            <td>3,678</td>
+                            <td>75%</td>
+                        </tr>
+                        <tr>
+                            <td>Twitter</td>
+                            <td>2,645</td>
+                            <td>30%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div> -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/ts.js"></script>
+  </section>
+</body>
+</html>

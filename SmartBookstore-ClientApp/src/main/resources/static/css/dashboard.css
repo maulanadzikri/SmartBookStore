@@ -1,0 +1,115 @@
+
+  
+  .content-page-title {
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .main-content{
+    justify-content: center;
+    display: flex;
+  }
+
+  .mc-2{
+    margin-top: -20px;
+  }
+
+/* Content */
+.content{
+  /* background-color: #FFF; */
+  width: 300px;
+  height: 100px;
+  padding: 20px;
+  margin: 30px;
+  box-shadow: 2px 2px 5px 0px #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+}
+
+.content .img-icon{
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+  background-color: #000000;
+  border-radius: 50%;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ct-book{
+  background-color: #1452c5;
+}
+
+.ct-transaction{
+  background-color: #22a108;
+}
+
+.ct-category{
+  background-color: #d88e06;
+}
+
+.ct-author{
+  background-color: #8c18a3;
+}
+
+.ct-publisher{
+  background-color: #b10e5f;
+}
+
+.ct-systemuser{
+  background-color: #8b0b0b;
+}
+
+.content .img-icon .img-earn{
+  height: 40px;
+  width: 40px;
+}
+
+.content .img-icon .img-stock{
+  height: 25px;
+  width: 25px;
+}
+
+.content .img-icon img{
+  height: 30px;
+  width: 30px;
+  filter: invert(100%);
+}
+
+.content .desc-content{
+  vertical-align: middle;
+  font-size: 24px;
+  color: #FFF;
+  margin-left: 10px;
+}
+
+.content .value-content{
+  vertical-align: middle;
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 5px;
+  color: white;
+}
+
+.card-container {
+    flex: 1;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 20px;
+}
+
+body {
+    background-color: #eee;
+}
+
+a {
+  text-decoration: none;
+}

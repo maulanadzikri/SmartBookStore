@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+</head>
+<body>
+    <div th:fragment="navbar">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg bg-secondary-subtle">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" th:href="@{/}">
+                    <img class="d-inline-block align-text-top" th:src="@{img/bs-icon.png}" alt="icon-logo" width="30" height="30">
+                    Smart Bookstore
+                </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" th:classappend="${isActive} == 'home' ? 'active fw-bold' : ''"  th:href="@{/}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" th:classappend="${isActive} == 'category' ? 'active fw-bold' : ''" th:href="@{/category}">Category</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" th:classappend="${isActive} == 'author' ? 'active fw-bold' : ''" th:href="@{/author}">Author</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" th:classappend="${isActive} == 'publisher' ? 'active fw-bold' : ''" th:href="@{/publisher}">Publisher</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" th:classappend="${isActive} == 'book' ? 'active fw-bold' : ''" th:href="@{/book}">Book</a>
+                  </li>
+                </ul>
+                <a th:href="@{/profile}" style="text-decoration: none;">
+                  <button class="btn btn-outline-primary sp" type="button">
+                    My Profile
+                  </button>
+                </a>
+                <form class="d-flex" th:action="@{/logout}" th:method="POST">
+                  <button class="btn btn-outline-danger" type="submit">Logout</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+    </div>
+  
+</body>
+</html>

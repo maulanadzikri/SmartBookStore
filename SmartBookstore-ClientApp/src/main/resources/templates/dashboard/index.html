@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/main2}">
+    <head>
+        <title>Book Client Service</title>
+        <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+    </head>
+    <body>
+        <section class="container mt-5 text-white" layout:fragment="content">
+            <div class="row">
+                <div class="col">
+                    <nav aria-label="breadcrumb" class="bg-body-tertiary rounded-3 p-3 mb-4 shadow">
+                        <ol class="breadcrumb mb-0">
+                            <li class="breadcrumb-item"><a th:href="@{/dashboard}">Dashboard</a></li>
+                            <!-- <li class="breadcrumb-item"><a href="#">User</a></li> -->
+                            <!-- <li class="breadcrumb-item active" aria-current="page">My Profile</li> -->
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="card-container shadow">    
+                <div class="main-content">
+                    
+                    <div class="content ct-book">
+                        <div class="img-icon">
+                            <img src="/img/db-book.png" alt="Books">
+                        </div>
+                        <div class="desc-info">
+                            <a th:href="@{/book}">
+                            <span class="desc-content"><b>Books</b></span>
+                            </a><br>
+                            <span class="desc-content" id="val-books"></span>
+                        </div>
+                    </div>
+
+                    <!-- <div class="content ct-earn">
+                        <div class="img-icon">
+                            <img class="img-earn" src="../img/db-earnings.png">
+                        </div>
+                        <div class="desc-info">
+                            <span class="desc-content"><b>Earnings</b></span><br>
+                            <span class="desc-content" id="val-earning"></span>
+                        </div>
+                    </div> -->
+
+                    <div class="content ct-systemuser">
+                        <div class="img-icon">
+                            <img src="../img/db-usermanagement.png">
+                        </div>
+                        <div class="desc-info">
+                            <a th:href="@{/usermanagement}">
+                            <span class="desc-content"><b>User</b></span>
+                            </a><br>
+                            <span class="desc-content" id="val-userdetails"></span>
+                        </div>
+                    </div>
+
+                    <div class="content ct-transaction">
+                        <div class="img-icon">
+                            <img src="../img/db-transaction.png">
+                        </div>
+                        <div class="desc-info">
+                            <a th:href="@{/transaction}">
+                                <span class="desc-content"><b>Transaction</b></span><br>
+                            </a>
+                            <span class="desc-content" id="val-transactions"></span>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="main-content mc-2">
+                    <div class="content ct-category">
+                        <div class="img-icon">
+                            <img src="../img/db-category.png">
+                        </div>
+                        <div class="desc-info">
+                            <a th:href="@{/category}">
+                            <span class="desc-content"><b>Category</b></span><br>
+                            </a>
+                            <span class="desc-content" id="val-categorys"></span>
+                        </div>
+                    </div>
+                    <div class="content ct-author">
+                        <div class="img-icon">
+                            <img class="img-author" src="../img/db-author.png">
+                        </div>
+                        <div class="desc-info">
+                            <a th:href="@{/author}">
+                            <span class="desc-content"><b>Author</b></span><br>
+                            </a>
+                            <span class="desc-content" id="val-authors"></span>
+                        </div>
+                    </div>
+                    <div class="content ct-publisher">
+                        <div class="img-icon">
+                            <img src="../img/db-publisher.png">
+                        </div>
+                        <div class="desc-info">
+                            <a th:href="@{/publisher}">
+                            <span class="desc-content"><b>Publisher</b></span><br>
+                            </a>
+                            <span class="desc-content" id="val-publishers"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="futer"></footer>
+        </section>
+        <div layout:fragment="script">
+            <script src="/js/dashboard.js"></script>
+        </div>
+    </body>
+</html>

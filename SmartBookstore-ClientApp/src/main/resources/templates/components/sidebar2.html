@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SideBar</title>
+</head>
+<body>
+    
+    <div th:fragment="sidebar2">
+         <!-- Sidebar -->
+ 
+    <div id="sidebar" class="sidebar">
+        <h2></h2>
+        <button class="closebtn" onclick="toggleSidebar()">×</button>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/dashboard}">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/book}">Books</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/category}">Category</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/author}">Author</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/publisher}">Publisher</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/transaction}">Transaction</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/usermanagement}">User Management</a>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>

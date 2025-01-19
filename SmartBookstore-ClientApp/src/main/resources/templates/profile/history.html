@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/main}">
+    <head>
+        <title>History</title>
+        <link rel="stylesheet" th:href="@{/css/history.css}">
+    </head>
+    <body>
+        <section class="container mt-5 text-white" layout:fragment="content">
+          <div class="card">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="fw-bold">History Transaction</h1>
+            </div>
+            <table id="table-history" class="table table-bordered table-striped table-hover text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th class="col-2">Date</th>
+                        <th class="col-2">Book</th>
+                        <th class="col-2">Qty</th>
+                        <th class="col-2">Price</th>
+                        <th class="col-2">Total</th>
+                    </tr>
+                </thead>
+            </table>
+
+            
+          </div>
+        </section>
+        <div layout:fragment="script">
+            <script src="/js/history.js"></script>
+        </div>
+    </body>
+</html>

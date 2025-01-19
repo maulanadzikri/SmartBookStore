@@ -1,0 +1,200 @@
+.book-container {
+    /* background-color: #18a748; */
+    height: auto;
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    /* border: 2px solid #000; */
+}
+
+.space-btm {
+    height: 100px;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+/* .book-cover {
+    background-color: brown;
+} */
+
+.book-cover img {
+    box-shadow: 2px 4px 14px -1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 2px 4px 14px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 4px 14px -1px rgba(0,0,0,0.75);
+}
+
+.book-detail {
+    /* background-color: darkolivegreen; */
+    height: auto;
+    width: 75%;
+    padding: 10px;
+    margin-left: 50px;
+}
+
+.book-buy-box {
+    /* background-color: darkgoldenrod; */
+    height: 120px;
+    padding-top: 20px;
+}
+
+.book-buy-box .book-price-rp {
+    font-weight: bold;
+    font-size: 28px;
+    color: rgb(24, 180, 10);
+}
+
+.btn-buy{
+    font-family: Roboto, sans-serif;
+    font-weight: 0;
+    font-size: 14px;
+    color: #fff;
+    background: linear-gradient(168deg, #3bd133 0%, #038708 100%);
+    padding: 10px 30px;
+    border: none;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 50px;
+    transition : 103ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn-buy:hover{
+    transition : 103ms;
+    padding: 10px 29px;
+    transform : translateY(-3px);
+    background: linear-gradient(168deg, #3bd133 0%, #038708 100%);
+    color: #00ffee;
+    /* border: solid 2px #0066cc; */
+}
+
+/* quantity */
+.qty {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+.qty label {
+    flex: 1 0 100%;
+}
+.qty input {
+    width: 5rem;
+    height: 3rem;
+    font-size: 1.3rem;
+    text-align: center;
+    border: 1px solid #575757;
+}
+.qty button {
+    width: 3rem;
+    height: 3rem;
+    color: #fff;
+    font-size: 2rem;
+    background-color: #575757;
+}
+.qty button.qtyminus {
+    margin-right: 0.3rem;
+}
+.qty button.qtyplus {
+    margin-left: 0.3rem;
+}
+
+
+/* payment */
+
+p {
+    display:block;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: .8rem 0;
+}
+
+.inputbox
+{
+    color:#030303;
+	width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 1.5px solid #ccc;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    font-family: 'Roboto', sans-serif;
+    color: #615a5a;
+    font-size: 1rem;
+    font-weight: 500;
+    outline:none;
+}
+
+.mm {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.yy {
+    width: 100px;
+}
+
+.expcvv {
+    display:flex;
+    justify-content: space-between;
+    padding-top: 0.6rem;
+}
+
+.expcvv-text{
+    padding-right: 1rem;
+}
+.expcvv-text2{
+    padding:0 1rem;
+}
+
+.button{
+    background: linear-gradient(
+135deg
+, #753370 0%, #298096 100%);
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    width:100%;
+    letter-spacing: .11rem;
+    outline:none;
+}
+
+.button:hover
+{
+	transform: scale(1.05) translateY(-3px);
+    box-shadow: 3px 3px 6px #38373785;
+}
+
+@media only screen and (max-width: 1000px) {
+    .card{
+        flex-direction: column;
+        width: auto;
+      
+    }
+
+    .leftside{
+        width: 100%;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+      border-top-right-radius:0;
+      border-radius:0;
+    }
+
+    .rightside{
+        width:auto;
+        border-bottom-left-radius: 1.5rem;
+        padding:0.5rem 3rem 3rem 2rem;
+      border-radius:0;
+    }
+}
+
+.total-order {
+    font-size: 20px;
+    color: rgb(200, 0, 0);
+}

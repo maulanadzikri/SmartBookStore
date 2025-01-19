@@ -1,0 +1,22 @@
+.container-slide {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: auto;
+}
+
+.slideshow-container {
+    background-color: #fff;
+    height: 200px;
+    width: 80%;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.slideshow-container img {
+    height: 200px;
+    width: 100%;
+    display: none;
+    transition: opacity 1s ease-in-out;
+}
+
