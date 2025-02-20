@@ -12,7 +12,6 @@ public class DashboardController {
     @GetMapping
     @PreAuthorize("hasRole('ADMIN')")
     public String dashboard() {
-
         return "dashboard/index";
     }
 }
