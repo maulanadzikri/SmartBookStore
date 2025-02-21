@@ -31,24 +31,12 @@
                 <button id="defaultOpen" class="tablinks" onclick="switchTab(event, 'manual')">Manual</button>
                 <button class="tablinks" onclick="switchTab(event, 'apiGoogleBooks')">Google Books</button>
             </div>
-
             <div id="manual" class="tabcontent">
                 <form>
                     <div class="mb-3">
                         <label class="form-label">Title</label>
                         <input type="text" id="create-book-title" class="form-control" placeholder="Book Title" required>
                     </div>
-                    <!-- <div class="mb-3">
-                        <label class="form-label">Img Option</label><br>
-                        <input type="radio" id="upload-file-option" name="img-option" value="file" checked>
-                        <label for="upload-file-option">Upload File</label>
-                        <input type="radio" id="url-option" name="img-option" value="url">
-                        <label for="url-option">Image URL</label>
-                    </div> -->
-                    <!-- <div class="mb-3" id="file-input-container">
-                        <label class="form-label">Upload Image</label>
-                        <input type="file" id="create-book-img" name="create-book-img" accept="image/png, image/jpeg" class="form-control">
-                    </div> -->
                     <div class="mb-3" id="url-input-container">
                         <label class="form-label">Image URL</label>
                         <input type="text" id="create-book-img-url" class="form-control" placeholder="Book Image URL">
@@ -88,7 +76,6 @@
                 <input type="text" id="query" placeholder="Enter book title or author">
                 <button id="searchBtn" onclick="searchBooks()">Search</button>
                 <div id="results"></div>
-
                 <form>
                     <div class="mb-3">
                         <img id="api-book-img" style="width: auto; height: 300px; display: none;" class="img-fluid" alt="Book Image">
