@@ -78,32 +78,30 @@
     </div>
     <div class="card" style="border-radius: 1rem; width: 90%; max-width: 500px;">
         <div class="card-body p-4 p-lg-5 text-black">
-                                        <!-- <form th:action="@{/register}" th:method="POST" th:object="${registerRequest}"> -->
-                                        <form autocomplete="off">
+                                        <form th:action="@{/register}" th:method="POST" th:object="${registerRequest}">
+                                        <!-- <form autocomplete="off"> -->
                                             <!-- <div class="d-flex align-items-center mb-3 pb-1">
                                                 <span class="h1 fw-bold mb-0">Sign Up</span>
                                             </div> -->
-                                            <input type="text" name="username" style="display:none;">
-                                            <input type="password" name="password" style="display:none;">
                                             <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">Create your account</h5>
                                             <div data-mdb-input-init class="form-outline mb-4">
-                                                <input type="text" autocomplete="off" class="form-control form-control-lg"/>
+                                                <input type="text" th:field="*{username}" autocomplete="off"  class="form-control form-control-lg"/>
                                                 <label class="form-label">Username</label>
                                             </div>
                                             <div data-mdb-input-init class="form-outline mb-4">
-                                                <input type="text" autocomplete="off" class="form-control form-control-lg"/>
+                                                <input type="text" th:field="*{fullname}" autocomplete="off" class="form-control form-control-lg"/>
                                                 <label class="form-label">Fullname</label>
                                             </div>
                                             <div data-mdb-input-init class="form-outline mb-4">
-                                                <input type="email" autocomplete="off" class="form-control form-control-lg"/>
+                                                <input type="email" th:field="*{email}" autocomplete="off" class="form-control form-control-lg"/>
                                                 <label class="form-label">Email</label>
                                             </div>
                                             <div data-mdb-input-init class="form-outline mb-4">
-                                                <input type="text" name="no-filed-name"  autocomplete="off" class="form-control form-control-lg"/>
+                                                <input type="text"  th:field="*{phone}"  autocomplete="off" class="form-control form-control-lg"/>
                                                 <label class="form-label">Phone</label>
                                             </div>
                                             <div data-mdb-input-init class="form-outline mb-4">
-                                                <input type="password"  name="no-filed-password" autocomplete="off"
+                                                <input type="password"  th:field="*{password}" autocomplete="off"
                                                     class="form-control form-control-lg"/>
                                                 <label class="form-label">Password</label>
                                             </div>

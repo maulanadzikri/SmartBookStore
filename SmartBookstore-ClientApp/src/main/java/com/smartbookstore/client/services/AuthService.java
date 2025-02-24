@@ -110,7 +110,7 @@ public class AuthService {
         log.info("Registration Request :", registrationRequest);
         try {
             ResponseEntity<RegistrationResponse> res = restTemplate.exchange(
-                    url,
+                    registerUrl,
                     HttpMethod.POST,
                     new HttpEntity<>(registrationRequest),
                     RegistrationResponse.class);
