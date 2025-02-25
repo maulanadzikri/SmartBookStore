@@ -25,39 +25,39 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/login")
 public class AuthController {
 
-    private AuthService authService;
+  private AuthService authService;
 
-    @GetMapping
-    public String loginView(Model model, LoginRequest loginRequest) {
-        Authentication auth = AuthSessionsUtil.getAuthentication();
+  @GetMapping
+  public String loginView(Model model, LoginRequest loginRequest) {
+    Authentication auth = AuthSessionsUtil.getAuthentication();
 
-        if (auth instanceof AnonymousAuthenticationToken) {
-            return "auth/login";
-        }
-
-        return "redirect:/home";
+    if (auth instanceof AnonymousAuthenticationToken) {
+      return "auth/login";
     }
 
-    @PostMapping
-    public String login(LoginRequest loginRequest) {
-        if (!authService.login(loginRequest)) {
-            return "redirect:/login?error=true";
-        }
-        return "redirect:/home";
-    }
+    return "redirect:/home";
+  }
 
-    @GetMapping("/register")
-    public String showRegistrationForm(Model model) {
-        RegistrationRequest registrationRequest = new RegistrationRequest();
-        model.addAttribute("registerRequest", registrationRequest);
-        return "S/auth/register";
-
+  @PostMapping
+  public String login(LoginRequest loginRequest) {
+    if (!authService.login(loginRequest)) {
+      return "redirect:/login?error=true";
     }
+    return "redirect:/home";
+  }
 
-    @PostMapping("/register")
-    public String register(RegistrationRequest registerRequest) {
-        log.info("Registered");
-        authService.register(registerRequest);
-        return "redirect:/auth/login";
-    }
+  @GetMapping("/register")
+  public String showRegistrationForm(Model model) {
+    RegistrationRequest registrationRequest = new RegistrationRequest();
+    model.addAttribute("registerRequest", registrationRequest);
+    return "S/auth/register";
+
+  }
+
+  // @PostMapping("/register")
+  // public String register(RegistrationRequest registerRequest) {
+  //   log.info("Registered");
+  //   authService.register(registerRequest);
+  //   return "redirect:/auth/login";
+  // }
 }

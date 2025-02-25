@@ -7,6 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         .card {
             border-radius: 1rem;
@@ -85,23 +86,23 @@
                                             </div> -->
                                             <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">Create your account</h5>
                                             <div data-mdb-input-init class="form-outline mb-4">
-                                                <input type="text" th:field="*{username}" autocomplete="off"  class="form-control form-control-lg"/>
+                                                <input id="username" type="text" th:field="*{username}" autocomplete="off"  class="form-control form-control-lg"/>
                                                 <label class="form-label">Username</label>
                                             </div>
                                             <div data-mdb-input-init class="form-outline mb-4">
-                                                <input type="text" th:field="*{fullname}" autocomplete="off" class="form-control form-control-lg"/>
+                                                <input id="fullname" type="text" th:field="*{fullname}" autocomplete="off" class="form-control form-control-lg"/>
                                                 <label class="form-label">Fullname</label>
                                             </div>
                                             <div data-mdb-input-init class="form-outline mb-4">
-                                                <input type="email" th:field="*{email}" autocomplete="off" class="form-control form-control-lg"/>
+                                                <input id="email" type="email" th:field="*{email}" autocomplete="off" class="form-control form-control-lg"/>
                                                 <label class="form-label">Email</label>
                                             </div>
                                             <div data-mdb-input-init class="form-outline mb-4">
-                                                <input type="text"  th:field="*{phone}"  autocomplete="off" class="form-control form-control-lg"/>
+                                                <input id="phone" type="text"  th:field="*{phone}"  autocomplete="off" class="form-control form-control-lg"/>
                                                 <label class="form-label">Phone</label>
                                             </div>
                                             <div data-mdb-input-init class="form-outline mb-4">
-                                                <input type="password"  th:field="*{password}" autocomplete="off"
+                                                <input id="password" type="password"  th:field="*{password}" autocomplete="off"
                                                     class="form-control form-control-lg"/>
                                                 <label class="form-label">Password</label>
                                             </div>
@@ -121,5 +122,37 @@
     </div>
 </section>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#btn-register").click(function (event) {
+            event.preventDefault();
+
+            var userData = {
+                username: $("#username").val(),
+                fullname: $("#fullname").val(),
+                email: $("#email").val(),
+                phone: $("#phone").val(),
+                password: $("#password").val()
+            };
+
+            $.ajax({
+                url: "http://localhost:9090/auth/registration",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(userData),
+                success: function (response) {
+                    alert("Registration successful!");
+                  //  window.location.href = "/login";
+                    console.log(userData)
+                },
+                error: function (xhr) {
+                    alert("Error: " + xhr.responseText);
+                    console.log(userData)
+
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>

@@ -13,6 +13,7 @@ import com.smartbookstore.server.services.impl.AuthServiceImpl;
 
 @RestController
 @AllArgsConstructor
+@CrossOrigin(origins = "http://localhost:9099")
 @RequestMapping("/auth")
 public class AuthControllerImpl implements AuthController {
     private AuthServiceImpl authServiceImpl;
